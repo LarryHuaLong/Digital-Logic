@@ -1,0 +1,58 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Wed Sep 06 10:47:13 2017
+# Process ID: 2884
+# Log file: C:/Users/Administrator/Documents/GitHub/Digital-Logic/WashingMachine/vivado.log
+# Journal file: C:/Users/Administrator/Documents/GitHub/Digital-Logic/WashingMachine\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Administrator/Documents/GitHub/Digital-Logic/WashingMachine/WashingMachine.xpr
+INFO: [Project 1-313] Project file moved from 'd:/Users/Larry/Documents/Reports/Digital Logic/WashingMachine' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.2/data/ip'.
+open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 706.914 ; gain = 147.012
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'divider_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/Administrator/Documents/GitHub/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj divider_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/Documents/GitHub/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [C:/Users/Administrator/Documents/GitHub/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/Documents/GitHub/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/divider_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module divider_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/Documents/GitHub/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/Documents/GitHub/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 6613245e742543e18711de77f8a56e00 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot divider_tb_behav xil_defaultlib.divider_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/Administrator/Documents/GitHub/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=20000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Administrator/Documents/GitHub/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=20000000) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.devider(N=20000000)
+Compiling module xil_defaultlib.divider_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot divider_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Administrator/Documents/GitHub/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/divider_tb_behav/webtalk/xsim_webtalk.tcl -notrace
