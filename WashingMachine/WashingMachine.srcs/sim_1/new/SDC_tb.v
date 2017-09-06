@@ -5,7 +5,7 @@ module SDC_tb;
     reg [7:0][7:0]data;
     wire [7:0]AN;
     wire [7:0]CN;
-    SDC sdc1(CLK100MHZ,data,AN,CN);
+    SDC sdc1(CLK100MHZ,AN,CN);
     initial CLK100MHZ = 0;
     always #5 CLK100MHZ = ~CLK100MHZ;
     initial 
