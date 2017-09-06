@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Tue Sep 05 14:40:21 2017
+# Process ID: 9564
+# Log file: d:/Users/Larry/Documents/Reports/Digital Logic/WashingMachine/vivado.log
+# Journal file: d:/Users/Larry/Documents/Reports/Digital Logic/WashingMachine\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {d:/Users/Larry/Documents/Reports/Digital Logic/WashingMachine/WashingMachine.xpr}
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2015.2/data/ip'.
+open_project: Time (s): cpu = 00:00:25 ; elapsed = 00:01:00 . Memory (MB): peak = 622.766 ; gain = 93.109
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Sep 05 14:46:24 2017...

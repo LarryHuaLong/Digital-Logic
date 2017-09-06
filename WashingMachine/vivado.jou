@@ -1,0 +1,53 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Wed Sep 06 08:09:18 2017
+# Process ID: 5332
+# Log file: d:/Users/Larry/Documents/Reports/Digital Logic/WashingMachine/vivado.log
+# Journal file: d:/Users/Larry/Documents/Reports/Digital Logic/WashingMachine\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {d:/Users/Larry/Documents/Reports/Digital Logic/WashingMachine/WashingMachine.xpr}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+file mkdir D:/Users/Larry/Documents/Reports/Digital Logic/WashingMachine/WashingMachine.srcs/sim_1/new
+file mkdir D:/Users/Larry/Documents/Reports/Digital Logic/WashingMachine/WashingMachine.srcs/sim_1/new
+file mkdir D:/Users/Larry/Documents/Reports/Digital Logic/WashingMachine/WashingMachine.srcs/sim_1/new
+file mkdir D:/Users/Larry/Documents/Reports/Digital Logic/WashingMachine/WashingMachine.srcs/sim_1/new
+file mkdir D:/Users/Larry/Documents/Reports/Digital Logic/WashingMachine/WashingMachine.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+file mkdir D:/Users/Larry/Documents/Reports/Digital Logic/WashingMachine/WashingMachine.srcs/sim_1/new
+file mkdir {d:/Users/Larry/Documents/Reports/Digital Logic/WashingMachine/WashingMachine.srcs/sim_1/new}
+close [ open {d:/Users/Larry/Documents/Reports/Digital Logic/WashingMachine/WashingMachine.srcs/sim_1/new/divider_tb.v} w ]
+add_files -fileset sim_1 {{d:/Users/Larry/Documents/Reports/Digital Logic/WashingMachine/WashingMachine.srcs/sim_1/new/divider_tb.v}}
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top divider_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+source divider_tb.tcl
+run 5000 ps
+add_wave {{/divider_tb/devider}} 
+restart
+run 5000 ps
+run 5 s
+close_sim
+launch_simulation
+source divider_tb.tcl
+run 5 s
+run 1 s
+close_sim
+launch_simulation
+source divider_tb.tcl
+restart
+close_sim
+launch_simulation
+source divider_tb.tcl
+close_sim
