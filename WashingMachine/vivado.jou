@@ -1,0 +1,190 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Wed Sep 06 15:41:54 2017
+# Process ID: 3000
+# Log file: D:/Digital-Logic/WashingMachine/vivado.log
+# Journal file: D:/Digital-Logic/WashingMachine\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Digital-Logic/WashingMachine/WashingMachine.xpr
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top divider_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source divider_tb.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top SDC_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source SDC_tb.tcl
+add_wave {{/SDC_tb/sdc1}} 
+add_wave {{/SDC_tb/sdc1/f_100Hz}} 
+restart
+restart
+close_sim
+launch_simulation
+source SDC_tb.tcl
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target [lindex [get_hw_targets -of_objects [get_hw_servers localhost]] 0]
+set_property PROGRAM.FILE {D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/SDC.bit} [lindex [get_hw_devices] 0]
+current_hw_device [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/SDC.bit} [lindex [get_hw_devices] 0]
+program_hw_devices -disable_eos_check [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+close_sim
+launch_simulation
+source SDC_tb.tcl
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/SDC.bit} [lindex [get_hw_devices] 0]
+program_hw_devices -disable_eos_check [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+add_bp {D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v} 11
+close_sim
+launch_simulation
+source SDC_tb.tcl
+add_wave {{/SDC_tb/sdc1/f_100Hz}} 
+restart
+run 10 us
+close_sim
+launch_simulation
+source SDC_tb.tcl
+run 10 us
+run 10 us
+run 10 ms
+add_bp {D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v} 23
+add_bp {D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v} 24
+add_bp {D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v} 25
+add_bp {D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v} 26
+add_bp {D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v} 27
+add_bp {D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v} 28
+add_bp {D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v} 29
+add_bp {D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v} 30
+add_bp {D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v} 31
+close_sim
+launch_simulation
+source SDC_tb.tcl
+run 10 ms
+run 10 ms
+close_sim
+launch_simulation
+source SDC_tb.tcl
+run 1 s
+close_sim
+launch_simulation
+source SDC_tb.tcl
+run 1 s
+close_sim
+launch_simulation
+launch_simulation
+source SDC_tb.tcl
+run 1 s
+close_sim
+launch_simulation
+source SDC_tb.tcl
+run 1 s
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/SDC.bit} [lindex [get_hw_devices] 0]
+program_hw_devices -disable_eos_check [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+reset_run impl_1 -prev_step 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/SDC.bit} [lindex [get_hw_devices] 0]
+program_hw_devices -disable_eos_check [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+close_sim
+launch_simulation
+source SDC_tb.tcl
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+run 1 s
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/SDC.bit} [lindex [get_hw_devices] 0]
+program_hw_devices -disable_eos_check [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+close_sim
+launch_simulation
+source SDC_tb.tcl
+step
+run 1 s
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+close_sim
+launch_simulation
+source SDC_tb.tcl
+run 1 s
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/SDC.bit} [lindex [get_hw_devices] 0]
+program_hw_devices -disable_eos_check [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+open_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/SDC.bit} [lindex [get_hw_devices] 0]
+program_hw_devices -disable_eos_check [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/SDC.bit} [lindex [get_hw_devices] 0]
+program_hw_devices -disable_eos_check [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/SDC.bit} [lindex [get_hw_devices] 0]
+program_hw_devices -disable_eos_check [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+close_sim
+launch_simulation
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+launch_simulation
+launch_simulation
+launch_simulation
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+launch_simulation
+launch_simulation
+close_hw_target
+close_sim

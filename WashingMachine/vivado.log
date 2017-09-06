@@ -1,0 +1,1584 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Wed Sep 06 15:41:54 2017
+# Process ID: 3000
+# Log file: D:/Digital-Logic/WashingMachine/vivado.log
+# Journal file: D:/Digital-Logic/WashingMachine\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Digital-Logic/WashingMachine/WashingMachine.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-509] GeneratedRun file for 'synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'impl_1' not found
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.2/data/ip'.
+open_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 715.191 ; gain = 140.992
+set_property top divider_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'divider_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj divider_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/divider_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module divider_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 6613245e742543e18711de77f8a56e00 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot divider_tb_behav xil_defaultlib.divider_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=20) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=20) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.devider(N=20)
+Compiling module xil_defaultlib.divider_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot divider_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/divider_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/divider_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Sep 06 15:42:46 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 55.223 ; gain = 0.250
+INFO: [Common 17-206] Exiting Webtalk at Wed Sep 06 15:42:46 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 745.367 ; gain = 0.000
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "divider_tb_behav -key {Behavioral:sim_1:Functional:divider_tb} -tclbatch {divider_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source divider_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'divider_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 753.508 ; gain = 8.141
+set_property top SDC_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/divider_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xelab.pb
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'SDC_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj SDC_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC
+WARNING: [VRFC 10-1315] redeclaration of ansi port AN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 6613245e742543e18711de77f8a56e00 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SDC_tb_behav xil_defaultlib.SDC_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.devider
+Compiling module xil_defaultlib.SDC
+Compiling module xil_defaultlib.SDC_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot SDC_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Sep 06 15:45:54 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 55.434 ; gain = 0.020
+INFO: [Common 17-206] Exiting Webtalk at Wed Sep 06 15:45:54 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 768.375 ; gain = 0.000
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "SDC_tb_behav -key {Behavioral:sim_1:Functional:SDC_tb} -tclbatch {SDC_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source SDC_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'SDC_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 771.105 ; gain = 2.730
+add_wave {{/SDC_tb/sdc1}} 
+add_wave {{/SDC_tb/sdc1/f_100Hz}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 774.480 ; gain = 0.000
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/divider_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xelab.pb
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'SDC_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj SDC_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC
+WARNING: [VRFC 10-1315] redeclaration of ansi port AN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 6613245e742543e18711de77f8a56e00 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SDC_tb_behav xil_defaultlib.SDC_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.devider
+Compiling module xil_defaultlib.SDC
+Compiling module xil_defaultlib.SDC_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot SDC_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Sep 06 15:46:44 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 55.703 ; gain = 0.250
+INFO: [Common 17-206] Exiting Webtalk at Wed Sep 06 15:46:44 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 774.480 ; gain = 0.000
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "SDC_tb_behav -key {Behavioral:sim_1:Functional:SDC_tb} -tclbatch {SDC_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source SDC_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'SDC_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 774.480 ; gain = 0.000
+launch_runs impl_1 -to_step write_bitstream
+[Wed Sep 06 15:47:51 2017] Launched synth_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/synth_1/runme.log
+[Wed Sep 06 15:47:51 2017] Launched impl_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2015.2
+  **** Build date : Jun 26 2015-16:56:39
+    ** Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 785.598 ; gain = 0.000
+open_hw_target [lindex [get_hw_targets -of_objects [get_hw_servers localhost]] 0]
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292746193A
+set_property PROGRAM.FILE {D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/SDC.bit} [lindex [get_hw_devices] 0]
+current_hw_device [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/SDC.bit} [lindex [get_hw_devices] 0]
+program_hw_devices -disable_eos_check [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Wed Sep 06 15:50:34 2017] Launched synth_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/synth_1/runme.log
+[Wed Sep 06 15:50:34 2017] Launched impl_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/runme.log
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 846.863 ; gain = 0.000
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/divider_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/SDC_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xelab.pb
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'SDC_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj SDC_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC
+WARNING: [VRFC 10-1315] redeclaration of ansi port AN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 6613245e742543e18711de77f8a56e00 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SDC_tb_behav xil_defaultlib.SDC_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=100000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=100000) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.devider(N=100000)
+Compiling module xil_defaultlib.SDC
+Compiling module xil_defaultlib.SDC_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot SDC_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Sep 06 15:51:58 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 55.238 ; gain = 0.250
+INFO: [Common 17-206] Exiting Webtalk at Wed Sep 06 15:51:58 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 846.863 ; gain = 0.000
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "SDC_tb_behav -key {Behavioral:sim_1:Functional:SDC_tb} -tclbatch {SDC_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source SDC_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'SDC_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 846.863 ; gain = 0.000
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Wed Sep 06 15:52:32 2017] Launched synth_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/synth_1/runme.log
+[Wed Sep 06 15:52:32 2017] Launched impl_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/SDC.bit} [lindex [get_hw_devices] 0]
+program_hw_devices -disable_eos_check [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+add_bp {D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v} 11
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 852.785 ; gain = 0.000
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/divider_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xelab.pb
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'SDC_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj SDC_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC
+WARNING: [VRFC 10-1315] redeclaration of ansi port AN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 6613245e742543e18711de77f8a56e00 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SDC_tb_behav xil_defaultlib.SDC_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=4000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=4000000) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.devider(N=4000000)
+Compiling module xil_defaultlib.SDC
+Compiling module xil_defaultlib.SDC_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot SDC_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Sep 06 15:58:48 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 54.781 ; gain = 0.020
+INFO: [Common 17-206] Exiting Webtalk at Wed Sep 06 15:58:48 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 852.785 ; gain = 0.000
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "SDC_tb_behav -key {Behavioral:sim_1:Functional:SDC_tb} -tclbatch {SDC_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source SDC_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'SDC_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 852.785 ; gain = 0.000
+add_wave {{/SDC_tb/sdc1/f_100Hz}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 901.914 ; gain = 0.000
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/divider_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xelab.pb
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'SDC_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj SDC_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC
+WARNING: [VRFC 10-1315] redeclaration of ansi port AN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 6613245e742543e18711de77f8a56e00 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SDC_tb_behav xil_defaultlib.SDC_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=4) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.devider(N=4)
+Compiling module xil_defaultlib.SDC
+Compiling module xil_defaultlib.SDC_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot SDC_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Sep 06 16:01:19 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 55.410 ; gain = 0.250
+INFO: [Common 17-206] Exiting Webtalk at Wed Sep 06 16:01:19 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 901.914 ; gain = 0.000
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "SDC_tb_behav -key {Behavioral:sim_1:Functional:SDC_tb} -tclbatch {SDC_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source SDC_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'SDC_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 901.914 ; gain = 0.000
+run 10 us
+run 10 us
+run 10 ms
+add_bp {D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v} 23
+add_bp {D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v} 24
+add_bp {D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v} 25
+add_bp {D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v} 26
+add_bp {D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v} 27
+add_bp {D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v} 28
+add_bp {D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v} 29
+add_bp {D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v} 30
+add_bp {D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v} 31
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 901.914 ; gain = 0.000
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/divider_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xelab.pb
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'SDC_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj SDC_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC
+WARNING: [VRFC 10-1315] redeclaration of ansi port AN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 6613245e742543e18711de77f8a56e00 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SDC_tb_behav xil_defaultlib.SDC_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=4) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.devider(N=4)
+Compiling module xil_defaultlib.SDC
+Compiling module xil_defaultlib.SDC_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot SDC_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Sep 06 16:04:59 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 55.207 ; gain = 0.020
+INFO: [Common 17-206] Exiting Webtalk at Wed Sep 06 16:04:59 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 901.914 ; gain = 0.000
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "SDC_tb_behav -key {Behavioral:sim_1:Functional:SDC_tb} -tclbatch {SDC_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source SDC_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'SDC_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 901.914 ; gain = 0.000
+run 10 ms
+run 10 ms
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 901.914 ; gain = 0.000
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/divider_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xelab.pb
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'SDC_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj SDC_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC
+WARNING: [VRFC 10-1315] redeclaration of ansi port AN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 6613245e742543e18711de77f8a56e00 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SDC_tb_behav xil_defaultlib.SDC_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=4000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=4000000) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.devider(N=4000000)
+Compiling module xil_defaultlib.SDC
+Compiling module xil_defaultlib.SDC_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot SDC_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Sep 06 16:06:45 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 55.828 ; gain = 0.020
+INFO: [Common 17-206] Exiting Webtalk at Wed Sep 06 16:06:45 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 901.914 ; gain = 0.000
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "SDC_tb_behav -key {Behavioral:sim_1:Functional:SDC_tb} -tclbatch {SDC_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source SDC_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'SDC_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 901.914 ; gain = 0.000
+run 1 s
+run: Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 901.914 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 901.914 ; gain = 0.000
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/divider_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xelab.pb
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'SDC_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj SDC_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC
+WARNING: [VRFC 10-1315] redeclaration of ansi port AN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 6613245e742543e18711de77f8a56e00 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SDC_tb_behav xil_defaultlib.SDC_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=4000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=4000) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.devider(N=4000)
+Compiling module xil_defaultlib.SDC
+Compiling module xil_defaultlib.SDC_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot SDC_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Sep 06 16:08:37 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 55.664 ; gain = 0.020
+INFO: [Common 17-206] Exiting Webtalk at Wed Sep 06 16:08:37 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 901.914 ; gain = 0.000
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "SDC_tb_behav -key {Behavioral:sim_1:Functional:SDC_tb} -tclbatch {SDC_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source SDC_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'SDC_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 901.914 ; gain = 0.000
+run 1 s
+run: Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 901.914 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 901.914 ; gain = 0.000
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/divider_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xelab.pb
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'SDC_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj SDC_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC
+WARNING: [VRFC 10-1315] redeclaration of ansi port AN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+ERROR: [VRFC 10-1412] syntax error near [ [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register AN is not permitted, left-hand side should be reg/integer/time/genvar [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:24]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register AN is not permitted, left-hand side should be reg/integer/time/genvar [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:24]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register CN is not permitted, left-hand side should be reg/integer/time/genvar [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:24]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register CN is not permitted, left-hand side should be reg/integer/time/genvar [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:24]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register AN is not permitted, left-hand side should be reg/integer/time/genvar [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:25]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register AN is not permitted, left-hand side should be reg/integer/time/genvar [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:25]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register CN is not permitted, left-hand side should be reg/integer/time/genvar [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:25]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register CN is not permitted, left-hand side should be reg/integer/time/genvar [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:25]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register AN is not permitted, left-hand side should be reg/integer/time/genvar [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:26]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register AN is not permitted, left-hand side should be reg/integer/time/genvar [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:26]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register CN is not permitted, left-hand side should be reg/integer/time/genvar [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:26]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register CN is not permitted, left-hand side should be reg/integer/time/genvar [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:26]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register AN is not permitted, left-hand side should be reg/integer/time/genvar [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:27]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register AN is not permitted, left-hand side should be reg/integer/time/genvar [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:27]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register CN is not permitted, left-hand side should be reg/integer/time/genvar [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:27]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register CN is not permitted, left-hand side should be reg/integer/time/genvar [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:27]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register AN is not permitted, left-hand side should be reg/integer/time/genvar [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:28]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register AN is not permitted, left-hand side should be reg/integer/time/genvar [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:28]
+INFO: [#UNDEF] Sorry, too many errors..
+ERROR: [USF-XSim-62] 'compile' step failed with error(s) while executing 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/compile.bat' script. Please check that the file has the correct 'read/write/execute' permissions and the Tcl console output for any other possible errors or warnings.
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/divider_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xelab.pb
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'SDC_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj SDC_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC
+WARNING: [VRFC 10-1315] redeclaration of ansi port AN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+WARNING: [VRFC 10-1315] redeclaration of ansi port CN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 6613245e742543e18711de77f8a56e00 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SDC_tb_behav xil_defaultlib.SDC_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=4000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=4000) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.devider(N=4000)
+Compiling module xil_defaultlib.SDC
+Compiling module xil_defaultlib.SDC_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot SDC_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Sep 06 16:11:00 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 54.973 ; gain = 0.020
+INFO: [Common 17-206] Exiting Webtalk at Wed Sep 06 16:11:00 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 901.914 ; gain = 0.000
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "SDC_tb_behav -key {Behavioral:sim_1:Functional:SDC_tb} -tclbatch {SDC_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source SDC_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'SDC_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 901.914 ; gain = 0.000
+run 1 s
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:00:08 ; elapsed = 00:00:35 . Memory (MB): peak = 901.914 ; gain = 0.000
+INFO: [Common 17-344] 'run' was cancelled
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 901.914 ; gain = 0.000
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/divider_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xelab.pb
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'SDC_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj SDC_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC
+WARNING: [VRFC 10-1315] redeclaration of ansi port AN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+WARNING: [VRFC 10-1315] redeclaration of ansi port CN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 6613245e742543e18711de77f8a56e00 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SDC_tb_behav xil_defaultlib.SDC_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=4000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=4000) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.devider(N=4000)
+Compiling module xil_defaultlib.SDC
+Compiling module xil_defaultlib.SDC_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot SDC_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Sep 06 16:15:19 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 56.141 ; gain = 0.020
+INFO: [Common 17-206] Exiting Webtalk at Wed Sep 06 16:15:19 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 901.914 ; gain = 0.000
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "SDC_tb_behav -key {Behavioral:sim_1:Functional:SDC_tb} -tclbatch {SDC_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source SDC_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'SDC_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 901.914 ; gain = 0.000
+run 1 s
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:00:03 ; elapsed = 00:00:50 . Memory (MB): peak = 901.914 ; gain = 0.000
+INFO: [Common 17-344] 'run' was cancelled
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Wed Sep 06 16:16:29 2017] Launched synth_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/synth_1/runme.log
+[Wed Sep 06 16:16:29 2017] Launched impl_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/SDC.bit} [lindex [get_hw_devices] 0]
+program_hw_devices -disable_eos_check [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream
+WARNING: [Vivado 12-872] Run step 'Design Initialization' is out-of-date.
+[Wed Sep 06 16:19:06 2017] Launched impl_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/runme.log
+reset_run impl_1 -prev_step 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Wed Sep 06 16:20:35 2017] Launched synth_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/synth_1/runme.log
+[Wed Sep 06 16:20:35 2017] Launched impl_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Wed Sep 06 16:23:17 2017] Launched synth_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/synth_1/runme.log
+[Wed Sep 06 16:23:17 2017] Launched impl_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/SDC.bit} [lindex [get_hw_devices] 0]
+program_hw_devices -disable_eos_check [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 901.914 ; gain = 0.000
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/divider_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xelab.pb
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'SDC_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj SDC_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC
+WARNING: [VRFC 10-1315] redeclaration of ansi port AN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+WARNING: [VRFC 10-1315] redeclaration of ansi port CN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 6613245e742543e18711de77f8a56e00 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SDC_tb_behav xil_defaultlib.SDC_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.devider
+Compiling module xil_defaultlib.SDC
+Compiling module xil_defaultlib.SDC_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot SDC_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Sep 06 16:26:30 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 55.344 ; gain = 0.020
+INFO: [Common 17-206] Exiting Webtalk at Wed Sep 06 16:26:30 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 901.914 ; gain = 0.000
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "SDC_tb_behav -key {Behavioral:sim_1:Functional:SDC_tb} -tclbatch {SDC_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source SDC_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'SDC_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 901.914 ; gain = 0.000
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Wed Sep 06 16:26:36 2017] Launched synth_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/synth_1/runme.log
+[Wed Sep 06 16:26:36 2017] Launched impl_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/runme.log
+run 1 s
+run: Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 901.914 ; gain = 0.000
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/SDC.bit} [lindex [get_hw_devices] 0]
+program_hw_devices -disable_eos_check [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 901.914 ; gain = 0.000
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/divider_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xelab.pb
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'SDC_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj SDC_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC
+WARNING: [VRFC 10-1315] redeclaration of ansi port AN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+WARNING: [VRFC 10-1315] redeclaration of ansi port CN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 6613245e742543e18711de77f8a56e00 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SDC_tb_behav xil_defaultlib.SDC_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=500000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=500000) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.devider(N=500000)
+Compiling module xil_defaultlib.SDC
+Compiling module xil_defaultlib.SDC_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot SDC_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Sep 06 16:30:39 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 55.688 ; gain = 0.020
+INFO: [Common 17-206] Exiting Webtalk at Wed Sep 06 16:30:39 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 901.914 ; gain = 0.000
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "SDC_tb_behav -key {Behavioral:sim_1:Functional:SDC_tb} -tclbatch {SDC_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source SDC_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'SDC_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 901.914 ; gain = 0.000
+step
+Stopped at time : 1050 ns : File "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v" Line 10
+run 1 s
+run: Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 901.914 ; gain = 0.000
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Wed Sep 06 16:31:34 2017] Launched synth_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/synth_1/runme.log
+[Wed Sep 06 16:31:34 2017] Launched impl_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/runme.log
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 901.914 ; gain = 0.000
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/divider_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/SDC_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xelab.pb
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'SDC_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj SDC_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC
+WARNING: [VRFC 10-1315] redeclaration of ansi port AN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+WARNING: [VRFC 10-1315] redeclaration of ansi port CN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 6613245e742543e18711de77f8a56e00 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SDC_tb_behav xil_defaultlib.SDC_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=5000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=5000) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.devider(N=5000)
+Compiling module xil_defaultlib.SDC
+Compiling module xil_defaultlib.SDC_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot SDC_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Sep 06 16:32:31 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 55.234 ; gain = 0.020
+INFO: [Common 17-206] Exiting Webtalk at Wed Sep 06 16:32:31 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 901.914 ; gain = 0.000
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "SDC_tb_behav -key {Behavioral:sim_1:Functional:SDC_tb} -tclbatch {SDC_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source SDC_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'SDC_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 901.914 ; gain = 0.000
+run 1 s
+run: Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 901.914 ; gain = 0.000
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/SDC.bit} [lindex [get_hw_devices] 0]
+program_hw_devices -disable_eos_check [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Wed Sep 06 16:33:50 2017] Launched synth_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/synth_1/runme.log
+[Wed Sep 06 16:33:50 2017] Launched impl_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2015.2
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [D:/Digital-Logic/WashingMachine/.Xil/Vivado-3000-admin30/dcp/SDC.xdc]
+Finished Parsing XDC File [D:/Digital-Logic/WashingMachine/.Xil/Vivado-3000-admin30/dcp/SDC.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.156 . Memory (MB): peak = 1113.680 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.156 . Memory (MB): peak = 1113.680 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 1213.699 ; gain = 311.785
+impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/SDC.bit} [lindex [get_hw_devices] 0]
+program_hw_devices -disable_eos_check [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Wed Sep 06 16:37:41 2017] Launched synth_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/synth_1/runme.log
+[Wed Sep 06 16:37:41 2017] Launched impl_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/SDC.bit} [lindex [get_hw_devices] 0]
+program_hw_devices -disable_eos_check [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Wed Sep 06 16:49:54 2017] Launched synth_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/synth_1/runme.log
+[Wed Sep 06 16:49:54 2017] Launched impl_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/SDC.bit} [lindex [get_hw_devices] 0]
+program_hw_devices -disable_eos_check [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+ERROR: [Simtcl 6-165] Wave configuration has been modified. Use -force to close simulation without saving wave configuration.
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 1590.645 ; gain = 0.000
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/divider_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xelab.pb
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'SDC_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj SDC_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC
+WARNING: [VRFC 10-1315] redeclaration of ansi port AN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+WARNING: [VRFC 10-1315] redeclaration of ansi port CN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:8]
+ERROR: [VRFC 10-1243] port data must not be declared to be an array [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:3]
+ERROR: [VRFC 10-1040] module SDC ignored due to previous errors [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:1]
+ERROR: [USF-XSim-62] 'compile' step failed with error(s) while executing 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/compile.bat' script. Please check that the file has the correct 'read/write/execute' permissions and the Tcl console output for any other possible errors or warnings.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Wed Sep 06 17:00:30 2017] Launched synth_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/synth_1/runme.log
+[Wed Sep 06 17:00:30 2017] Launched impl_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/impl_1/runme.log
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/divider_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xelab.pb
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'SDC_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj SDC_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC
+WARNING: [VRFC 10-1315] redeclaration of ansi port AN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+WARNING: [VRFC 10-1315] redeclaration of ansi port CN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 6613245e742543e18711de77f8a56e00 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SDC_tb_behav xil_defaultlib.SDC_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 8 differs from formal bit length 64 for port data [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v:8]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=5000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" Line 1. Module SDC doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" Line 1. Module devider(N=5000) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.devider(N=5000)
+Compiling module xil_defaultlib.SDC
+Compiling module xil_defaultlib.SDC_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot SDC_tb_behav
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xsim.dir/SDC_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-344] 'run_program' was cancelled
+1
+    while executing
+"catch {rdi::run_program $scr_file} error_log"
+    (procedure "::tclapp::xilinx::xsim::usf_launch_script" line 35)
+    invoked from within
+"::tclapp::xilinx::xsim::usf_launch_script "xsim" $step"
+    (procedure "tclapp::xilinx::xsim::elaborate" line 13)
+    invoked from within
+"tclapp::xilinx::xsim::elaborate { -simset sim_1 -mode behavioral -run_dir D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav -int_os_type ..."
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1590.645 ; gain = 0.000
+INFO: [Common 17-344] 'launch_simulation' was cancelled
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/divider_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xelab.pb
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'SDC_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj SDC_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC
+WARNING: [VRFC 10-1315] redeclaration of ansi port AN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+WARNING: [VRFC 10-1315] redeclaration of ansi port CN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC_tb
+ERROR: [VRFC 10-529] concurrent assignment to a non-net data is not permitted [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v:13]
+ERROR: [VRFC 10-394] cannot access memory data_b directly [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v:13]
+ERROR: [VRFC 10-395] cannot assign an unpacked type to a packed type [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v:13]
+ERROR: [VRFC 10-902] incompatible unpacked dimensions in assignment [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v:13]
+ERROR: [VRFC 10-1040] module SDC_tb ignored due to previous errors [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sim_1/new/SDC_tb.v:3]
+ERROR: [USF-XSim-62] 'compile' step failed with error(s) while executing 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/compile.bat' script. Please check that the file has the correct 'read/write/execute' permissions and the Tcl console output for any other possible errors or warnings.
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/divider_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xelab.pb
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'SDC_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj SDC_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC
+WARNING: [VRFC 10-1315] redeclaration of ansi port AN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+WARNING: [VRFC 10-1315] redeclaration of ansi port CN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:8]
+ERROR: [VRFC 10-60] data is not a constant [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:18]
+ERROR: [VRFC 10-395] cannot assign a packed type to an unpacked type [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:18]
+ERROR: [VRFC 10-1040] module SDC ignored due to previous errors [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:1]
+ERROR: [USF-XSim-62] 'compile' step failed with error(s) while executing 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/compile.bat' script. Please check that the file has the correct 'read/write/execute' permissions and the Tcl console output for any other possible errors or warnings.
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/BCD_decoder.v" into library work [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/BCD_decoder.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library work [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library work [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:1]
+[Wed Sep 06 17:07:09 2017] Launched synth_1...
+Run output will be captured here: D:/Digital-Logic/WashingMachine/WashingMachine.runs/synth_1/runme.log
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/divider_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xelab.pb
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'SDC_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj SDC_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC
+WARNING: [VRFC 10-1315] redeclaration of ansi port AN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+WARNING: [VRFC 10-1315] redeclaration of ansi port CN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:8]
+ERROR: [VRFC 10-60] data is not a constant [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:18]
+ERROR: [VRFC 10-395] cannot assign a packed type to an unpacked type [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:18]
+ERROR: [VRFC 10-1040] module SDC ignored due to previous errors [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:1]
+ERROR: [USF-XSim-62] 'compile' step failed with error(s) while executing 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/compile.bat' script. Please check that the file has the correct 'read/write/execute' permissions and the Tcl console output for any other possible errors or warnings.
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/divider_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/xelab.pb
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'SDC_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav'
+"xvlog -m64 --relax -prj SDC_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module devider
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/devider.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SDC
+WARNING: [VRFC 10-1315] redeclaration of ansi port AN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:7]
+WARNING: [VRFC 10-1315] redeclaration of ansi port CN is not allowed [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:8]
+ERROR: [VRFC 10-60] data is not a constant [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:18]
+ERROR: [VRFC 10-395] cannot assign a packed type to an unpacked type [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:18]
+ERROR: [VRFC 10-1040] module SDC ignored due to previous errors [D:/Digital-Logic/WashingMachine/WashingMachine.srcs/sources_1/new/ScanningDisplayController.v:1]
+ERROR: [USF-XSim-62] 'compile' step failed with error(s) while executing 'D:/Digital-Logic/WashingMachine/WashingMachine.sim/sim_1/behav/compile.bat' script. Please check that the file has the correct 'read/write/execute' permissions and the Tcl console output for any other possible errors or warnings.
+ERROR: [Labtools 27-3175] Target jsn-Nexys4DDR-210292746193A is no longer available.
+Please use disconnect_hw_server to close the current server connection. Check cable connectivity and that the target board is powered up.
+Restart the hw_server application running on host localhost, port 3121 and then use connect_hw_server to re-establish connection to target.
+close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost/xilinx_tcf/Digilent/210292746193A
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 1590.645 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Sep 06 17:09:09 2017...
