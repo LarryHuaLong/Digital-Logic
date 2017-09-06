@@ -1,12 +1,26 @@
 module SDC(
-	input CLK100MHZ;
-	input [7:0][7:0]data;
-	output [7:0]AN;
-	output [7:0]CN;
+	input CLK100MHZ,
+	input [7:0][7:0]data,
+	output [7:0]AN,
+	output [7:0]CN
 	);
 	reg clk,n;
-	divider#(1000000) f_100Hz(CLK100MHZ,clk);
+	devider#(10) f_100Hz(CLK100MHZ,clk);
 	initial n = 0;
+	
+	initial 
+            begin
+                data[7] = 8'b1110000;
+                data[6] = 8'b1011111;
+                data[5] = 8'b1011011;
+                data[4] = 8'b0110011;
+                data[3] = 8'b1111001;
+                data[2] = 8'b1101101;
+                data[1] = 8'b0110000;
+                data[0] = 8'b1111110;
+                
+            end
+	
 	always @(posedge clk)
 	begin
 		case(n)
