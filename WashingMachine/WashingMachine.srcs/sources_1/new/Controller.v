@@ -18,8 +18,12 @@ module Controller(
 	);
 	localparam mode1 = 3'b000,mode2 = 3'b001,mode3 = 3'b011,
 	           mode4 = 3'b010,mode5 = 3'b110,mode6 = 3'b100;
-	reg [7:0]total_time,process_time;
+	reg [7:0]total_time,process_time,stage_state;
+	wire [31:0]display2,display1;
+	BCD_en_decoder en_decoder1({total_time,porcess_time,stage_state,8'b00000000},display2,display1);
+
 	
+	SDC SDC_(CLK100MHZ,display2,display1,AN,CN);
 	
 	reg power_state;// 电源状态
 	initial power_state = 0;
@@ -73,6 +77,5 @@ module Controller(
 					   process_time <= weight_state;//洗涤过程时间
 				   end        
 	   endcase
-	
 	
 endmodule
