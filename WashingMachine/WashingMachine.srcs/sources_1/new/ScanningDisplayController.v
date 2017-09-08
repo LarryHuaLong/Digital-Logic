@@ -1,4 +1,4 @@
-module SDC(
+module sdc(
 	input CLK100MHZ,
 	input [31:0]display2,
 	input [31:0]display1,
@@ -10,7 +10,7 @@ module SDC(
 	reg [2:0]n;
 	
 	wire clk;
-	devider#(5000) f_100Hz(CLK100MHZ,clk);
+	devider#(5000) Devider(CLK100MHZ,clk);
 	
 	initial 
 	   begin

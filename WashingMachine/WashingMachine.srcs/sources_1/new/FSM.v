@@ -1,4 +1,4 @@
-module FSM_MODE(
+module fsm_mode(
 	input mode,
 	input pause_state,
 	input [3:0]weight_state,
@@ -47,7 +47,7 @@ module FSM_MODE(
 	   endcase
 endmodule
 
-module FSM_PROCESS(
+module fsm_process(
     
     
     );

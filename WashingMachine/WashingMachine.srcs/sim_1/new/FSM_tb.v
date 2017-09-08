@@ -6,7 +6,7 @@ module FSM_MODE_tb;
     wire [7:0]total_time;
     wire [7:0]process_time;
     
-     FSM_MODE MODE_FSM(mode,pause_state,weight_state,total_time,process_time);
+    fsm_mode Mode_FSM(mode,pause_state,weight_state,total_time,process_time);
      
      initial begin
             mode = 0;
