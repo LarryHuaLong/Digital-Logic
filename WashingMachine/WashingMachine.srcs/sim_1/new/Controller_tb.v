@@ -21,20 +21,21 @@ module Controller_tb;
     initial CLK100MHZ = 1;
     always #5 CLK100MHZ = ~CLK100MHZ;
     initial begin
-            weight = 3;  power = 0;   pause = 0;  mode = 0;//³õÊ¼×´Ì¬
-            #50 power = 1;#10 power = 0;
-            #100 mode = 1;#10 mode = 0;
-            #100 mode = 1;#10 mode = 0;
-            #100 mode = 1;#10 mode = 0;
-            #100 mode = 1;#10 mode = 0;
-            #100 mode = 1;#10 mode = 0;
-            #100 mode = 1;#10 mode = 0;
-            #100 mode = 1;#10 mode = 0;
-            #50 pause = 1;#10 pause = 0;
-            #100 mode = 1;#10 mode = 0;
-            #100 mode = 1;#10 mode = 0;
-            #100 mode = 1;#10 mode = 0;
-            #100 mode = 1;#10 mode = 0;
+            weight <= 3;  power <= 0;   pause <= 0;  mode <= 0;//³õÊ¼×´Ì¬
+            #50 power <= 1;#10 power <= 0;
+            #100 mode <= 1;#10 mode <= 0;
+            #100 mode <= 1;#10 mode <= 0;
+            #100 mode <= 1;#10 mode <= 0;
+            #100 mode <= 1;#10 mode <= 0;
+            #100 mode <= 1;#10 mode <= 0;
+            #100 mode <= 1;#10 mode <= 0;
+            #100 mode <= 1;#10 mode <= 0;
+            #50 pause <= 1;#10 pause <= 0;
+            #100 mode <= 1;#10 mode <= 0;
+            #100 mode <= 1;#10 mode <= 0;
+            #100 mode <= 1;#10 mode <= 0;
+            #100 power <=1;#10 power <= 0;   
+            #100 mode <= 1;#10 mode <= 0;
             #100 $finish;
         end
     

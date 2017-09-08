@@ -48,7 +48,7 @@ module fsm_mode(
 endmodule
 
 module fsm_process(
-    
+    input pause_state
     
     );
     

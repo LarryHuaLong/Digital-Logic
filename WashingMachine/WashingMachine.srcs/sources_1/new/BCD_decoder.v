@@ -15,7 +15,7 @@ module BCD_decoder(
      4'd6:result=8'b01000001;
      4'd7:result=8'b00011111;
      4'd8:result=8'b00000001;
-     4'd9:result=8'b00000101;
+     4'd9:result=8'b00001001;
     default: result=8'b11111111;
     endcase
 endmodule

@@ -29,15 +29,13 @@ module controller(
 	fsm_mode Mode_FSM(mode,pause_state,weight_state,total_time,process_time);
 	
 	wire [31:0]display2,display1;
-    reg [7:0]total_remain,process_remain,stage_state;
-    always if(pause_state == 0)
-            begin
-                total_remain <= total_time;
-                process_remain <= process_time;
-                stage_state <= weight_state;
-            end
-    sdc SDC1(CLK100MHZ,display2,display1,AN,CN);      
-    BCD_en_decoder En_decoder1(stage_state,total_remain,porcess_remian,stage_state,display2,display1);
+    wire [7:0]total_remain,process_remain,stage_state;
     
+    assign total_remain = total_time;
+    assign process_remain = process_time;
+    assign stage_state = weight_state;     
+        
+    BCD_en_decoder En_decoder1(stage_state,total_remain,process_remain,stage_state,display2,display1);
+    sdc SDC1(CLK100MHZ,display2,display1,AN,CN);  
       
 endmodule
