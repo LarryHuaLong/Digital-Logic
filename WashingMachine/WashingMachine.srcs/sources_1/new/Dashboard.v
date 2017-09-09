@@ -10,20 +10,24 @@ module dashboard(
     
     reg power_state;// 电源状态
     initial power_state = 0;
-    always @(posedge power) power_state = ~power_state;//按一次电源按钮，电源状态翻转
+    always @(posedge power) 
+        power_state = ~power_state;//按一次电源按钮，电源状态翻转
                
-    reg pause_temp1,pause_temp2;
-    assign pause_state = pause_temp1 & pause_temp2;//运行状态，1为运行，0为暂停
-    initial pause_temp1 = 1;
-    always @(negedge power)pause_temp1 = !pause_state;
-    initial pause_temp2 = 0;
-    always @(posedge pause) 
-        if(power_state == 0) pause_temp2 = 0;
-        else pause_temp2 = ~pause_temp2 ;//电源打开的情况下，按一次启动按钮，运行状态翻转
-               
+    reg pause_state;//运行状态，1为运行，0为暂停
+    initial pause_state = 0;
+    always @(posedge pause,negedge power) 
+        if(!power) pause_state = 0;
+        else if(pause && power_state)
+            pause_state = ~pause_state;//电源打开的情况下，按一次启动按钮，运行状态翻转
+        
+  
+
+         
+       
+                   
     reg [3:0]weight_state;//质量传感器
     initial weight_state = 3;
     always @(weight)
-       if(!pause_state) weight_state = weight;
+        if(!pause_state) weight_state = weight;
        
 endmodule

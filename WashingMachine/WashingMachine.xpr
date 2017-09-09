@@ -155,8 +155,8 @@
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="dashboard_tb"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="SimMode" Val="post-synthesis"/>
         <Option Name="SrcSet" Val="sources_1"/>
-        <Option Name="NLNetlistMode" Val="funcsim"/>
       </Config>
     </FileSet>
   </FileSets>
