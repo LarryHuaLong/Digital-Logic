@@ -27,10 +27,8 @@ module controller(
 	
 	wire [7:0]total_time,process_time;           
 	fsm_mode Mode_FSM(mode,pause_state,weight_state,total_time,process_time);
-	wire clock;
-	devider#(50000000) f_1Hz(CLK100MHZ,clock);
 	
-	
+	 
 	
 	wire [31:0]display2,display1;
     wire [7:0]total_remain,process_remain,stage_state;
@@ -39,8 +37,10 @@ module controller(
     assign stage_state = weight_state;     
     BCD_en_decoder En_decoder1(stage_state,total_remain,process_remain,stage_state,display2,display1);
     sdc SDC1(CLK100MHZ,display2,display1,AN,CN);  
-      
     
+    wire clock;
+    devider#(50000000) f_1Hz(CLK100MHZ,clock);  
+    //down_counter c_second(clock,)
     
     
 endmodule
