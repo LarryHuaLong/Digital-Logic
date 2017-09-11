@@ -2,12 +2,13 @@ module down_counter(
     input clk,
     input reset,
     input [7:0] data,
-    output qd
+    output qd,
+    output [7:0]cnt_remain
     );
-    
     reg [7:0]cnt;
     assign qd = !cnt;
-    initial cnt = 0;
+    assign cnt_remain = cnt;
+    initial cnt = 8'b00000000;
     always @( posedge clk)
     begin
         if (!reset) cnt = data; // 同步清 0，低电平有效

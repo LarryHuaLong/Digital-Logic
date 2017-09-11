@@ -25,16 +25,8 @@ module Controller_tb;
             #50 power <= 1;#10 power <= 0;
             #100 mode <= 1;#10 mode <= 0;
             #100 mode <= 1;#10 mode <= 0;
-            #100 mode <= 1;#10 mode <= 0;
-            #100 mode <= 1;#10 mode <= 0;
-            #100 mode <= 1;#10 mode <= 0;
-            #100 mode <= 1;#10 mode <= 0;
-            #100 mode <= 1;#10 mode <= 0;
             #50 pause <= 1;#10 pause <= 0;
-            #100 mode <= 1;#10 mode <= 0;
-            #100 mode <= 1;#10 mode <= 0;
-            #100 mode <= 1;#10 mode <= 0;
-            #100 power <=1;#10 power <= 0;   
+            #100000 power <=1;#10 power <= 0;   
             #100 mode <= 1;#10 mode <= 0;
             #100 $finish;
         end

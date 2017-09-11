@@ -2,10 +2,8 @@
 module dashboard(
     input power,
     input pause,
-    input [3:0] weight,
     output power_state,
-    output pause_state,
-    output [3:0] weight_state
+    output pause_state
     );
     
     reg power_state;// 电源状态
@@ -19,9 +17,4 @@ module dashboard(
         if(!power_state) pause_state = 0;//电源为0或降为0时，运行状态置0
         else pause_state = ~pause_state;//电源打开的情况下，按一次启动按钮，运行状态翻转
      
-    reg [3:0]weight_state;//质量传感器
-    initial weight_state = 3;
-    always @(weight)
-        if(!pause_state) weight_state = weight;
-       
 endmodule
