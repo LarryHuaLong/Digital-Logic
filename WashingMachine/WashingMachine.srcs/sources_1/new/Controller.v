@@ -17,8 +17,8 @@ module controller(
 //	output  BEEPER		//蜂鸣器（用LED灯代替）
 	);
 	
-	wire power_state;// 电源状态
-	wire pause_state;//运行状态，1为运行，0为暂停
+	wire power_state, pause_state,wash_state,rinse_state,
+	      dewatering_state,intake_state,outlet_state;//各指示灯状态
 	wire [3:0]weight_state;
 	dashboard Dashboard1(power,pause,weight,power_state, pause_state,weight_state);
 	assign LED_POWER = power_state;
@@ -27,15 +27,20 @@ module controller(
 	
 	wire [7:0]total_time,process_time;           
 	fsm_mode Mode_FSM(mode,pause_state,weight_state,total_time,process_time);
+	wire clock;
+	devider#(50000000) f_1Hz(CLK100MHZ,clock);
+	
+	
 	
 	wire [31:0]display2,display1;
     wire [7:0]total_remain,process_remain,stage_state;
-    
     assign total_remain = total_time;
     assign process_remain = process_time;
     assign stage_state = weight_state;     
-        
     BCD_en_decoder En_decoder1(stage_state,total_remain,process_remain,stage_state,display2,display1);
     sdc SDC1(CLK100MHZ,display2,display1,AN,CN);  
       
+    
+    
+    
 endmodule

@@ -5,8 +5,8 @@ module fsm_mode(
 	output reg [7:0]total_time,
 	output reg [7:0]process_time
 	);
-	localparam mode1 = 3'b000,mode2 = 3'b001,mode3 = 3'b011,
-               mode4 = 3'b010,mode5 = 3'b110,mode6 = 3'b100;
+	localparam mode1 = 3'b111,mode2 = 3'b110,mode3 = 3'b100,
+               mode4 = 3'b010,mode5 = 3'b011,mode6 = 3'b001;
 	reg [2:0]mode_state;//模式状态
 	initial begin 
 	       mode_state <= mode1;//电源打开切换到洗漂脱模式
@@ -46,15 +46,6 @@ module fsm_mode(
 				   end        
 	   endcase
 endmodule
-
-module fsm_process(
-    input pause_state
-    
-    );
-    
-    
-endmodule
-
 
 
 

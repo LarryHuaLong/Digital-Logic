@@ -15,16 +15,10 @@ module dashboard(
                
     reg pause_state;//运行状态，1为运行，0为暂停
     initial pause_state = 0;
-    always @(posedge pause,negedge power) 
-        if(!power) pause_state = 0;
-        else if(pause && power_state)
-            pause_state = ~pause_state;//电源打开的情况下，按一次启动按钮，运行状态翻转
-        
-  
-
-         
-       
-                   
+    always @(posedge pause,negedge power_state) 
+        if(!power_state) pause_state = 0;//电源为0或降为0时，运行状态置0
+        else pause_state = ~pause_state;//电源打开的情况下，按一次启动按钮，运行状态翻转
+     
     reg [3:0]weight_state;//质量传感器
     initial weight_state = 3;
     always @(weight)
