@@ -1,5 +1,5 @@
 module sdc(
-	input clk,
+	input CLK100MHZ,
 	input [31:0]display2,
 	input [31:0]display1,
 	output [7:0]AN,
@@ -8,7 +8,8 @@ module sdc(
 	reg [7:0]AN;
 	reg [7:0]CN;
 	reg [2:0]n;
-	
+	wire clk;
+    devider#(5000) f_10000Hz(CLK100MHZ,clk);
 	initial 
 	   begin
 	       AN <= 8'b11111111;
