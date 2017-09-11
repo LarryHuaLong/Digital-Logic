@@ -15,12 +15,12 @@ module FSM_tb;
             power_state = 0;
             pause_state = 0;
             weight = 3;
-            #66 power_state = 1;
-            #5 mode = 1;#1 mode = 0;
-            #50 mode = 1;#1 mode = 0;
-            #50 mode = 1;#1 mode = 0;
-            #200 pause_state = 1;
-            #20000 $finish;
+            #660 power_state = 1;
+            #500 mode = 1;#10 mode = 0;
+            #500 mode = 1;#10 mode = 0;
+            #500 mode = 1;#10 mode = 0;
+            #2000 pause_state = 1;
+            #200000 $finish;
         end
     always #5 clock = ~clock;
      

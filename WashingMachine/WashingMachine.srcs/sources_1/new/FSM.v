@@ -21,17 +21,24 @@ module fsm(
        done_process,done_total,
        reset_second,reset_process,reset_total;
 	reg intake_state,wash_state,rinse_state,outlet_state,dewatering_state;
-	devider#(50000000) f_1Hz(CLK100MHZ,clock);
+	reg intake_running,wash_running,rinse_running,outlet_running,dewatering_running;
+	
+	devider#(50) f_1Hz(CLK100MHZ,clock);
     down_counter c_second(clk_second,reset_second,8'b00111100,clk_min,second_remain);//秒钟计时器
     down_counter c_process(clk_minite,reset_process,process_time,done_process,process_remain);//过程用时计时器
     down_counter c_total(clk_minite,reset_total,total_time,done_total,total_remain);//总时计时器
     
-    assign leds = {intake_state,wash_state,rinse_state,outlet_state,dewatering_state};
+    
     assign clk_second = pause_state ? clock : 0;
     assign clk_minite = pause_state ? clk_min : CLK100MHZ;
     assign reset_second = power_state&&pause_state ? !clk_min : 0;
     assign reset_process = power_state&&pause_state ? !done_process : 0;
     assign reset_total = power_state&&pause_state ? !done_total : 0;
+    assign leds[4] = intake_running ? clock : intake_state;
+    assign leds[3] = wash_running ? clock : wash_state;
+    assign leds[2] = rinse_running ? clock : rinse_state;
+    assign leds[1] = outlet_running ? clock : outlet_state;
+    assign leds[0] = dewatering_running ? clock : dewatering_state;
     
 	initial begin 
 		   mode_state = mode1;//电源打开切换到洗漂脱模式
@@ -39,13 +46,20 @@ module fsm(
 		   total_time = weight_state + weight_state + 27;//洗漂脱模式总时间
 		   process_state = process0;
 		   process_time = weight_state;//排水时间
+		   {intake_running,wash_running,rinse_running,outlet_running,dewatering_running} = 5'b00000;
 		   {intake_state,wash_state,rinse_state,outlet_state,dewatering_state} = 5'b11111;
            end
 	
-	/*always @(posedge done_process,posedge pause_state)
+	always @(posedge done_process,posedge pause_state)
 	   case(process_state)
 	   process0:begin 
-				        
+	               if(pause_state) intake_running = 1;//进水灯闪烁
+ 				   if(done_process) begin
+ 				       process_state = process1;
+ 				       process_time = 9;
+ 				       intake_running = 0;
+ 				       if(mode_state == mode2) intake_state = 0;//如果是单洗模式则关闭进水灯
+ 				       end
 				end
 	   process1:begin  
 				    
@@ -68,7 +82,7 @@ module fsm(
 	   process7:begin 
 				    
 				end
-	   endcase*/
+	   endcase
 		  
 	always @(weight)
                   if(!pause_state) weight_state = weight;

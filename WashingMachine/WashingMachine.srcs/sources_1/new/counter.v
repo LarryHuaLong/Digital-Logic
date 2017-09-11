@@ -7,14 +7,14 @@ module down_counter(
     );
     reg [7:0]cnt,cnt_ex;
     assign qd = !cnt;
-    assign cnt_remain = cnt_ex;
+    assign cnt_remain = cnt;
     initial cnt = 8'b00000000;
     always @( negedge clk)
-        begin 
-            cnt_ex <= cnt;
+        
+            
             if (!reset) cnt <= data - 1;// 同步清 0，低电平有效
             else cnt <= cnt - 1; // 减法计数
-        end
+        
 endmodule
 
 
