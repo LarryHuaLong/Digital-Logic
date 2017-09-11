@@ -23,7 +23,7 @@ module controller(
 	wire [31:0]display2,display1;
     wire [7:0]stage_state,total_remain,process_remain,second_remain;
     wire clk_10000Hz,clock;
-    
+    wire [4]
 	dashboard Dashboard1(power,pause,power_state, pause_state);
 	
 	devider#(5000) f_10000Hz(CLK100MHZ,clk_10000Hz);

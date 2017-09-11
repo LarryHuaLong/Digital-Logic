@@ -9,9 +9,11 @@ module down_counter(
     assign qd = !cnt;
     assign cnt_remain = cnt;
     initial cnt = 8'b00000000;
-    always @( posedge clk)
-    begin
-        if (!reset) cnt = data; // 同步清 0，低电平有效
+    always @( negedge clk)
+        if (!reset) cnt = data;// 同步清 0，低电平有效
         else cnt = cnt - 1; // 减法计数
-    end
 endmodule
+
+
+
+
