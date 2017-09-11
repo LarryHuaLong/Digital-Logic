@@ -5,16 +5,13 @@ module down_counter(
     output qd,
     output [7:0]cnt_remain
     );
-    reg [7:0]cnt,cnt_ex;
+    reg [7:0]cnt;
     assign qd = !cnt;
-    assign cnt_remain = cnt_ex;
+    assign cnt_remain = cnt;
     initial cnt = 8'b00000000;
     always @( negedge clk)
-        begin 
-            cnt_ex <= cnt;
-            if (!reset) cnt <= data - 1;// 同步清 0，低电平有效
-            else cnt <= cnt - 1; // 减法计数
-        end
+        if (!reset) cnt = data;// 同步清 0，低电平有效
+        else cnt = cnt - 1; // 减法计数
 endmodule
 
 
