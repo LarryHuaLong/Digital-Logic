@@ -30,7 +30,7 @@ module fsm(
     
     
     assign clk_second = pause_state ? clock : (power_state ? 0 : CLK100MHZ);
-    assign clk_minite = pause_state ? clock : (power_state ? 0 : CLK100MHZ);
+    assign clk_minite = power_state ? (pause_state ? clock : (reset_total ? 0 : CLK100MHZ)) : CLK100MHZ;
     assign reset_second = power_state&&pause_state ? !clk_min : 0;
     assign reset_process = power_state&&pause_state ? !done_process : 0;
     assign reset_total = power_state&&pause_state ? !done_total : 0;
