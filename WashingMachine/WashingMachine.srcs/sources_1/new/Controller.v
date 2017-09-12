@@ -23,9 +23,10 @@ module controller(
 	wire [31:0]display2,display1;
     wire [7:0]stage_state,total_remain,process_remain,second_remain;
     wire [5:0]leds;
-	dashboard Dashboard1(power,pause,power_state, pause_state);
+    wire finished;
+	dashboard Dashboard1(power,pause,finished,power_state, pause_state);
 	
-	fsm FSM(CLK100MHZ,mode,weight,power_state,pause_state,weight_state,total_remain,process_remain,second_remain,leds);
+	fsm FSM(CLK100MHZ,mode,weight,power_state,pause_state,weight_state,total_remain,process_remain,second_remain,leds,finished);
         
     BCD_en_decoder En_decoder1(stage_state,total_remain,process_remain,second_remain,display2,display1);
 	

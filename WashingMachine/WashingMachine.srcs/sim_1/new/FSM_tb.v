@@ -20,7 +20,7 @@ module FSM_tb;
             #500 mode = 1;#10 mode = 0;
             #500 mode = 1;#10 mode = 0;
             #2000 pause_state = 1;
-            #800000 $finish;
+            #5000000 $finish;
         end
     always #5 clock = ~clock;
      
