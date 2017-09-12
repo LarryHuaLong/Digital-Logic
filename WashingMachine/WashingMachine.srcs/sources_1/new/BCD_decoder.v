@@ -6,7 +6,7 @@ module BCD_decoder(
     reg [7:0] result;
     always @(BCD)
     case (BCD) // ÓÃ case Óï¾ä½øĞĞÒëÂë
-     4'd0:result=8'b11111101;
+     4'd0:result=8'b00000011;
      4'd1:result=8'b10011111;
      4'd2:result=8'b00100101;
      4'd3:result=8'b00001101;

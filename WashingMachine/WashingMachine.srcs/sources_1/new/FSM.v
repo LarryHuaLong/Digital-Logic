@@ -9,7 +9,7 @@ module fsm(
 	output [7:0] total_remain,
     output [7:0] process_remain,
     output [7:0] second_remain,
-    output [4:0] leds
+    output [5:0] leds
 	);
 	localparam mode1 = 3'b111,mode2 = 3'b110,mode3 = 3'b100,
                mode4 = 3'b010,mode5 = 3'b011,mode6 = 3'b001;
@@ -25,15 +25,16 @@ module fsm(
 	
 	devider#(50) f_1Hz(CLK100MHZ,clock);
     down_counter c_second(clk_second,reset_second,8'b00111100,clk_min,second_remain);//秒钟计时器
-    down_counter c_process(clk_minite,reset_process,process_time,done_process,process_remain);//过程用时计时器
-    down_counter c_total(clk_minite,reset_total,total_time,done_total,total_remain);//总时计时器
+    down_counter#(1) c_process(clk_minite,reset_process,process_time * 60,done_process,process_remain);//过程用时计时器
+    down_counter#(1) c_total(clk_minite,reset_total,total_time * 60,done_total,total_remain);//总时计时器
     
     
-    assign clk_second = pause_state ? clock : 0;
-    assign clk_minite = pause_state ? clk_min : CLK100MHZ;
+    assign clk_second = pause_state ? clock : (power_state ? 0 : CLK100MHZ);
+    assign clk_minite = pause_state ? clock : (power_state ? 0 : CLK100MHZ);
     assign reset_second = power_state&&pause_state ? !clk_min : 0;
     assign reset_process = power_state&&pause_state ? !done_process : 0;
     assign reset_total = power_state&&pause_state ? !done_total : 0;
+    assign leds[5] = pause_state ? clock : 0;
     assign leds[4] = intake_running ? clock : intake_state;
     assign leds[3] = wash_running ? clock : wash_state;
     assign leds[2] = rinse_running ? clock : rinse_state;
@@ -51,43 +52,86 @@ module fsm(
            end
 	
 	always @(posedge done_process,posedge pause_state)
+	   if(pause_state && !done_process)
+	       case(process_state)
+	          process0:begin intake_running = 1;end
+	          process1:begin wash_running = 1;end
+	          process2:begin outlet_running = 1;end
+	          process3:begin dewatering_running = 1;end
+	          process4:begin intake_running = 1;end
+	          process5:begin rinse_running = 1;end
+	          process6:begin outlet_running = 1;end
+	          process7:begin dewatering_running = 1;end
+          endcase
+	   else
 	   case(process_state)
-	   process0:begin 
-	               if(pause_state) intake_running = 1;//进水灯闪烁
- 				   if(done_process) begin
- 				       process_state = process1;
- 				       process_time = 9;
- 				       intake_running = 0;
- 				       if(mode_state == mode2) intake_state = 0;//如果是单洗模式则关闭进水灯
- 				       end
-				end
-	   process1:begin  
-				    
-				end
-	   process2:begin 
-				    
-				end
-	   process3:begin 
-				    
-				end
-	   process4:begin 
-				    
-				end
-	   process5:begin 
-				    
-				end
-	   process6:begin 
-			         
-				end
-	   process7:begin 
-				    
-				end
-	   endcase
-		  
+           process0:begin 
+                        process_state = process1;
+                        process_time = 9;
+                        wash_running = 1;//开始洗衣
+                        intake_running = 0;
+                        if(mode_state == mode2) intake_state = 0;//如果是单洗模式则关闭进水灯
+                    end
+           process1:begin  
+                        process_state = process2;
+                        process_time = 3;
+                        outlet_running = 1;//开始排水
+                        wash_running = 0;
+                        wash_state = 0;
+                    end
+           process2:begin 
+                        process_state = process3;
+                        process_time = 3;
+                        dewatering_running = 1;//开始甩干
+                        outlet_running = 0;
+                        if(mode_state == mode3 || mode_state == mode4) outlet_state = 0;
+                    end
+           process3:begin 
+                        process_state = process4;
+                        process_time = weight_state;
+                        intake_running = 1;//开始进水
+                        dewatering_running = 0;
+                        if(mode_state == mode3 || mode_state == mode4) dewatering_state = 0;
+                    end
+           process4:begin 
+                        process_state = process5;
+                        process_time = 6;
+                        rinse_running = 1;//开始漂洗
+                        intake_running = 0;
+                        intake_state = 0;
+                    end
+           process5:begin 
+                        process_state = process6;
+                        process_time = 3;
+                        outlet_running = 1;//开始排水
+                        rinse_running = 0;
+                        rinse_state = 0;
+                    end
+           process6:begin 
+                        process_state = process7;
+                        process_time = 3;
+                        dewatering_running = 1;//开始甩干
+                        outlet_running = 0;
+                        outlet_state = 0;
+                    end
+           process7:begin 
+                        process_state = process0;
+                        process_time = weight_state;
+                        dewatering_running = 0;//开始甩干
+                        dewatering_state = 0;
+                    end
+           endcase
+              
 	always @(weight)
-                  if(!pause_state) weight_state = weight;
-	always @(posedge mode)
-	   if(pause_state == 0)
+          if(!pause_state) weight_state = weight < 4 ? 3 : weight;
+	always @(posedge mode,negedge power_state)
+	   if(!power_state)begin mode_state <= mode1;//切换到洗漂脱模式
+                           total_time <= weight_state + weight_state + 27;//洗漂脱模式总时间
+                           process_state <= process0;
+                           process_time <= weight_state;//排水时间
+                           {intake_state,wash_state,rinse_state,outlet_state,dewatering_state} <= 5'b11111;
+                       end
+	   else if(power_state && !pause_state)
 	   case(mode_state)
 			mode1:begin mode_state <= mode2;//切换到单洗模式
 					   total_time <= weight_state + 9;//单洗模式总时间
@@ -122,13 +166,13 @@ module fsm(
 			mode6:begin mode_state <= mode1;//切换到洗漂脱模式
 					   total_time <= weight_state + weight_state + 27;//洗漂脱模式总时间
 					   process_state <= process0;
-					   process_time <= weight_state;//排水时间
+					   process_time <= weight_state;//进水时间
 					   {intake_state,wash_state,rinse_state,outlet_state,dewatering_state} <= 5'b11111;
 				   end
 			default:begin mode_state <= mode1;//切换到洗漂脱模式
 					   total_time <= weight_state + weight_state + 27;//洗漂脱模式总时间
 					   process_state <= process0;
-					   process_time <= weight_state;//排水时间
+					   process_time <= weight_state;//进水时间
 					   {intake_state,wash_state,rinse_state,outlet_state,dewatering_state} <= 5'b11111;
 				   end
 	   endcase
