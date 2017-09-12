@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="5" Path="C:/Users/Administrator/Documents/GitHub/Digital-Logic/WashingMachine/WashingMachine.xpr">
+<Project Version="7" Minor="5" Path="d:/Users/Larry/Documents/Reports/Digital-Logic/WashingMachine/WashingMachine.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="6613245e742543e18711de77f8a56e00"/>
@@ -165,6 +165,8 @@
         <Option Name="TopModule" Val="FSM_tb"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="xsim.elaborate.debug_level" Val="all"/>
+        <Option Name="xsim.elaborate.rangecheck" Val="true"/>
       </Config>
     </FileSet>
   </FileSets>
