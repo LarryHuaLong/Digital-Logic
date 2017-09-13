@@ -13,7 +13,7 @@ module controller(
 	output  LED_WASH,	//洗涤指示灯
 	output  LED_RINSE,	//漂洗指示灯
 	output  LED_OUTLET,	//排水指示灯
-	output  LED_DEWATERING,//甩干指示灯
+	output  LED_DEWATERING,//脱水指示灯
 	output  BEEPER		//蜂鸣器（用LED灯代替）
 	);
 	
