@@ -158,6 +158,7 @@ module fsm(
                         else begin  //否则开始排水
                                 process_state = process2;
                                 process_time = 3;
+								next_process_time = 3;//甩干时间
                                 outlet_running = 1;//开始排水
                                 wash_running = 0;
                                 wash_state = 0;
@@ -167,6 +168,7 @@ module fsm(
                         process_state = process3;
                         process_time = 3;
                         dewatering_running = 1;//开始甩干
+						next_process_time = weight_state;//进水时间
                         outlet_running = 0;
                         if(mode_state == mode3 || mode_state == mode4) 
                             outlet_state = 0;//如果是洗漂或单漂模式则关闭排水灯
@@ -174,6 +176,7 @@ module fsm(
            process3:begin //完成甩干后进水
                         process_state = process4;
                         process_time = weight_state;
+						next_process_time = 6;//漂洗时间
                         intake_running = 1;//开始进水
                         dewatering_running = 0;
                         if(mode_state == mode3 || mode_state == mode4) 
