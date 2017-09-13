@@ -6,10 +6,10 @@ module down_counter(
     output qd,
     output [7:0]cnt_remain
     );
-    
+    parameter mod = 8'b00000000;
     reg [7:0]cnt,cnt_ex;
     assign qd = !cnt;
-    assign cnt_remain = cnt + 1;
+    assign cnt_remain = cnt + mod;
     initial cnt = data;
     always @( negedge clk)
             if (!reset) 
