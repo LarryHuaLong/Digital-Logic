@@ -28,11 +28,11 @@ module controller(
 	
 	fsm FSM(CLK100MHZ,mode,weight,power_state,pause_state,weight_state,total_remain,process_remain,second_remain,leds,finished);
         
-    BCD_en_decoder En_decoder1(stage_state,total_remain,process_remain,second_remain,display2,display1);
+    BCD_en_decoder En_decoder1(total_remain,process_remain,stage_state,second_remain,display2,display1);
 	
 	sdc SDC1(CLK100MHZ,display2,display1,AN,CN);
 	assign BEEPER = power | pause | mode | leds[5];
-	assign {LED_INTAKE,LED_WASH,LED_RINSE,LED_OUTLET,LED_DEWATERING} = leds;
+	assign {LED_INTAKE,LED_OUTLET,LED_WASH,LED_RINSE,LED_DEWATERING} = leds[4:0];
     assign LED_POWER = power_state;
     assign LED_PAUSE = pause_state;
     assign stage_state = weight_state; 

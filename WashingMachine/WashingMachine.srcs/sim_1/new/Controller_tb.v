@@ -1,4 +1,4 @@
-`timescales 1ns/1ps
+`timescale 1ns/1ps
 module Controller_tb;
     reg CLK100MHZ;	//系统时钟
 	reg power;		//电源按钮
@@ -25,8 +25,9 @@ module Controller_tb;
             #500 power <= 1;#500 power <= 0;
             #1000 mode <= 1;#100 mode <= 0;
             #1000 mode <= 1;#100 mode <= 0;
+            #1000 mode <= 1;#100 mode <= 0;
             #5000 pause <= 1;#500 pause <= 0;
-            #20000000 power <=1;#100 power <= 0;   
+            #10000000 power <=1;#100 power <= 0;   
             #1000 mode <= 1;#100 mode <= 0;
             #1000 $finish;
         end

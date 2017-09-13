@@ -1,4 +1,4 @@
-`timescales 1ns/1ps
+`timescale 1ns/1ps
 module fsm(
     input CLK100MHZ,
 	input mode,
@@ -22,28 +22,28 @@ module fsm(
 	wire clock,clk_second,clk_min,clk_minite,clk_reset,
        done_process,done_total,
        reset_second,reset_process,reset_total;
-	reg intake_state,wash_state,rinse_state,outlet_state,dewatering_state;
+	reg wash_state,rinse_state,dewatering_state;
 	reg intake_running,wash_running,rinse_running,outlet_running,dewatering_running;
 	reg pause_ex_state;
 	
 	devider#(500) f_1Hz(CLK100MHZ,clock);
     down_counter c_second(clk_second,reset_second,8'b00111100,clk_min,second_remain);//秒钟计时器
-    down_counter c_process(clk_minite,reset_process,load_process_time,done_process,process_remain);//过程用时计时器
-    down_counter c_total(clk_minite,reset_total,total_time,done_total,total_remain);//总时计时器
-    down_counter c_reset(CLK100MHZ,reset_reset,8'b00001010,clk_reset);//复位脉冲
+    down_counter#(1) c_process(clk_minite,reset_process,load_process_time,done_process,process_remain);//过程用时计时器
+    down_counter#(1) c_total(clk_minite,reset_total,total_time,done_total,total_remain);//总时计时器
+    down_counter c_reset(CLK100MHZ,reset_reset,8'b01010000,clk_reset);//复位脉冲
     assign load_process_time = pause_state ? next_process_time : process_time;
     assign finished = !total_remain && !second_remain;
-    assign clk_second = pause_state ? clock : 0;
-    assign clk_minite = power_state ? (pause_state ? clk_min : ( !reset_process ? clk_reset : 0 ) ) : clk_reset;
+    assign clk_second = power_state ? (pause_state ? clock : ( !reset_second ? clk_reset : 0 ) ) : 0;
+    assign clk_minite = power_state ? (pause_state ? clk_min : ( !reset_process ? clk_reset : 0 ) ) : 0;
     assign reset_reset = !clk_reset;
-    assign reset_second = power_state&&pause_state ? !clk_min : 0;
-    assign reset_process =  power_state&&pause_state ? !done_process : 0;
-    assign reset_total =  power_state&&pause_state ? 1 : 0;
+    assign reset_second = power_state&&pause_state ? !clk_min :  (!mode || 0);
+    assign reset_process =  power_state&&pause_state ? !done_process : (!mode || 0);
+    assign reset_total =  power_state&&pause_state ? 1 : (!mode || 0);
     assign leds[5] = pause_state ? clock : 0;
     assign leds[4] = intake_running ? clock : 0;
-    assign leds[3] = wash_running ? clock : wash_state;
-    assign leds[2] = rinse_running ? clock : rinse_state;
-    assign leds[1] = outlet_running ? clock : 0;
+    assign leds[3] = outlet_running ? clock : 0;
+    assign leds[2] = wash_running ? clock : wash_state;
+    assign leds[1] = rinse_running ? clock : rinse_state;
     assign leds[0] = dewatering_running ? clock : dewatering_state;
     
 	initial begin 
@@ -132,7 +132,7 @@ module fsm(
                  process6:begin dewatering_running = 1;outlet_running = 1;end
                  process7:begin dewatering_running = 1;end
              endcase  
-        else if( pause_state && !done_process && pause_ex_state)
+        else if( !mode && pause_state && !done_process && pause_ex_state)
 			//响应done_process下降沿
 		   case(process_state)
            process0:begin //完成进水后洗衣
@@ -140,10 +140,8 @@ module fsm(
                         process_time = 9;
                         wash_running = 1;//开始洗衣
                         intake_running = 0;
-                        if(mode_state == mode2) begin
-                            intake_state = 0;//如果是单洗模式则关闭进水灯
+                        if(mode_state == mode2) 
                             next_process_time = 0;//进程结束
-                            end
                         else next_process_time = 3;//排水时间
                     end
            process1:begin //完成洗衣后
@@ -169,8 +167,6 @@ module fsm(
                         dewatering_running = 1;//开始甩干
 						next_process_time = weight_state;//进水时间
                         outlet_running = 0;
-                        if(mode_state == mode3 || mode_state == mode4) 
-                            outlet_state = 0;//如果是洗漂或单漂模式则关闭排水灯
                     end
            process3:begin //完成甩干后进水
                         process_state = process4;
@@ -188,8 +184,7 @@ module fsm(
 							next_process_time = 0;
 						else next_process_time = 3;
                         rinse_running = 1;//开始漂洗
-                        intake_running = 0;
-                        intake_state = 0;
+                        intake_running = 0;// 结束进水
                     end
            process5:begin //完成漂洗后
                         if(mode_state == mode3 || mode_state == mode4) 
@@ -215,7 +210,6 @@ module fsm(
 						next_process_time = 0;
                         dewatering_running = 1;//开始甩干
                         outlet_running = 0;
-                        outlet_state = 0;
                     end
            process7:begin //完成甩干后结束
                         process_state = process0;
