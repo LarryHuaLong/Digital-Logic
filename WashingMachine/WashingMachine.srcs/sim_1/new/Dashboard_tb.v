@@ -1,30 +1,33 @@
 module dashboard_tb;
+    reg clk;
     reg power;
     reg pause;
+    reg finished;
     wire power_state;
     wire pause_state;
-    dashboard Dashboard(power,pause,,power_state,pause_state,);
-  
+    dashboard Dashboard(clk,power,pause,finished,power_state,pause_state);
+    always #5 clk = ~clk;
     initial begin
-        power = 0;pause = 0;
-        #10 power = 1;#2 power = 0;
-        #10 power = 1;#3 power = 0;
-        #10 pause = 1;#2 pause = 0;
-        #10 power = 1;#2 power = 0;
-        #10 power = 1;#5 power = 0;
-         #10 power = 1;#5 power = 0;
+        clk = 0;
+        power = 0;pause = 0;finished = 0;
+        #100 power = 1;#200 power = 0;
+        #100 power = 1;#300 power = 0;
+        #100 power = 1;#300 power = 0;
+        #100 pause = 1;#200 pause = 0;
+        #100 power = 1;#200 power = 0;
         
-        #10 pause = 1;#2 pause = 0;
-        #10 pause = 1;#2 pause = 0;
-        #10 pause = 1;#2 pause = 0;
-        #10 pause = 1;#2 pause = 0;
-        #10 pause = 1;#2 pause = 0;
+        
+        #100 pause = 1;#200 pause = 0;
+        #100 pause = 1;#200 pause = 0;
+        #100 pause = 1;#200 pause = 0;
+        
+        #100 finished = 1;#20 finished = 0;
        
-        #10 power = 1;#2 power = 0;
-        #10 pause = 1;#2 pause = 0;
-        #10 power = 1;#2 power = 0;
-        #20 pause = 1;#2 pause = 0;
-        #10 $finish;
+        #100 power = 1;#200 power = 0;
+        #100 pause = 1;#200 pause = 0;
+        #100 power = 1;#200 power = 0;
+        #200 pause = 1;#200 pause = 0;
+        #100 $finish;
         end
     
     

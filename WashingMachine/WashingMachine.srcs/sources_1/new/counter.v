@@ -10,7 +10,7 @@ module down_counter(
     reg [7:0]cnt;
     assign qd = !cnt;
     assign cnt_remain = cnt + mod;
-    initial cnt = data;
+    initial cnt = 8'b01010101;
     always @( negedge clk)
             if (!reset)
                 cnt = data - 1;// 异步清 0，低电平有效

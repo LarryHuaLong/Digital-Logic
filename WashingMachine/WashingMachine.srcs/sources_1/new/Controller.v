@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 module controller(
 	input CLK100MHZ,	//系统时钟
 	input power,		//电源按钮
@@ -24,13 +26,18 @@ module controller(
     wire [7:0]stage_state,total_remain,process_remain,second_remain;
     wire [5:0]leds;
     wire finished;
-    wire clk_1,clk_10000;
-    devider#(2) f_10000Hz(CLK100MHZ,clk_10000);
-    devider#(500) f_1Hz(CLK100MHZ,clk_1);
-	dashboard Dashboard1(power,pause,finished,power_state, pause_state);
-	fsm FSM(clk_1,clk_10000,mode,weight,power_state,pause_state,weight_state,total_remain,process_remain,second_remain,leds,finished);
+    wire clk_clock,clk_reset,clk_1,clk_1000,clk_100000,clk_10000000;
+    devider#(5) f_10000000Hz(CLK100MHZ,clk_10000000);
+    devider#(500) f_100000Hz(CLK100MHZ,clk_100000);
+    devider#(50000) f_1000Hz(CLK100MHZ,clk_1000);
+    devider#(50000000) f_1Hz(CLK100MHZ,clk_1);
+   
+    assign clk_clock = stage ? clk_100000 : clk_1;
+    assign clk_reset = stage ? clk_10000000 : clk_1000;
+	dashboard Dashboard1(clk_reset,power,pause,finished,power_state, pause_state);
+	fsm FSM(clk_clock,clk_reset,mode,weight,power_state,pause_state,weight_state,total_remain,process_remain,second_remain,leds,finished);
     BCD_en_decoder En_decoder1(total_remain,process_remain,stage_state,second_remain,display2,display1);
-	sdc SDC1(clk_10000,display2,display1,AN,CN);
+	sdc SDC1(clk_reset,display2,display1,AN,CN);
 	assign BEEPER = power | pause | mode | leds[5];
 	assign {LED_INTAKE,LED_OUTLET,LED_WASH,LED_RINSE,LED_DEWATERING} = leds[4:0];
     assign LED_POWER = power_state;

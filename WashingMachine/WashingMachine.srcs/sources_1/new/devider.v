@@ -1,8 +1,9 @@
+`timescale 1ns/1ps
+
 module devider(input CLK100MHZ,
-     output clk
+     output reg clk
      );
      parameter [31:0]N = 1000000;//default frequency
-     reg clk;
      reg [31:0]count = 0;
      initial clk = 0;
      initial count = 0;

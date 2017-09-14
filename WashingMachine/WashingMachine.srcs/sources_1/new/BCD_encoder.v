@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module BCD_encoder(
 	input [7:0]DEC_2BIT,
 	output [3:0]BCD_decade,
