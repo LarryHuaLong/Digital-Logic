@@ -3,10 +3,9 @@ module sdc(
 	input clk,
 	input [31:0]display2,
 	input [31:0]display1,
-	output [7:0]AN,
-	output [7:0]CN
+	output reg [7:0]AN,
+	output reg [7:0]CN
 	);
-	reg [7:0]AN,CN;
 	reg [2:0]n;
 	initial 
 	   begin

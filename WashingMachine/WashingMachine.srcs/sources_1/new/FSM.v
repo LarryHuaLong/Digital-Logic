@@ -58,7 +58,7 @@ module fsm(
 	always @(posedge clk_reset) ex_pause_state = #10 pause_state;
 	always @(posedge clk_reset) ex_done_process = #10 done_process;
 	always @(posedge clk_reset)
-       if(!pause_state) weight_state = weight < 4 ? 3 : weight;
+       if(!power_state) weight_state = (weight > 3)? weight : 3;
 	always @(posedge clk_reset)
 	   if(!power_state)//电源关闭时
 		   begin 

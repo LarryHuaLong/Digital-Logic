@@ -5,12 +5,11 @@ module dashboard(
     input power,
     input pause,
     input finished,
-    output power_state,
-    output pause_state,
+    output reg power_state,
+    output reg pause_state,
     output dududu
     );
-    reg power_state,pause_state,ending;
-    reg ex_power,ex_pause,ex_finished,ex_ending;
+    reg ex_power,ex_pause,ex_finished,ending,ex_ending;
     reg [3:0]count;
     assign dududu = ending ? count[0] : 0;
     initial begin 

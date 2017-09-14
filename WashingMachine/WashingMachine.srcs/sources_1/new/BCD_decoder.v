@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 module BCD_decoder(
     input [3:0]BCD,
-    output [7:0] result
+    output reg [7:0] result
     );
-    reg [7:0] result;
+    initial result = 8'b11111111;
     always @(BCD)
         case (BCD) // ÓÃ case Óï¾ä½øĞĞÒëÂë
          4'd0:result=8'b00000011;
