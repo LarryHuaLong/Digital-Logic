@@ -164,10 +164,10 @@
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="Controller_tb"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
-        <Option Name="SimMode" Val="post-synthesis"/>
         <Option Name="SrcSet" Val="sources_1"/>
         <Option Name="xsim.elaborate.debug_level" Val="all"/>
         <Option Name="xsim.elaborate.rangecheck" Val="true"/>
+        <Option Name="NLNetlistMode" Val="funcsim"/>
       </Config>
     </FileSet>
   </FileSets>

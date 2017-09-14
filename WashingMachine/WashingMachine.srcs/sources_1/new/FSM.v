@@ -10,7 +10,7 @@ module fsm(
 	output [7:0] total_remain,
     output [7:0] process_remain,
     output [7:0] second_remain,
-    output [5:0] leds,
+    output [4:0] leds,
     output finished
 	);
 	localparam mode1 = 3'b111,mode2 = 3'b100,mode3 = 3'b110,
@@ -19,7 +19,7 @@ module fsm(
 			   process4 = 3'b111,process5 = 3'b110,process6 = 3'b100,process7 = 3'b101;
 	reg [2:0]mode_state,process_state;//模式和进程状态
 	reg [7:0]total_time,process_time,next_process_time;
-	wire [7:0]load_process_time;
+	reg [7:0]load_process_time;
 	wire clk_second,clk_minite,
        clk_min,done_process,done_total,
        reset_second,reset_process,reset_total;
@@ -30,14 +30,13 @@ module fsm(
 	down_counter#(0) c_second(clk_second,reset_second,8'b00111100,clk_min,second_remain);//秒钟计时器
     down_counter#(1) c_process(clk_minite,reset_process,load_process_time,done_process,process_remain);//过程用时计时器
     down_counter#(1) c_total(clk_minite,reset_total,total_time,done_total,total_remain);//总时计时器
-    assign load_process_time = pause_state ? next_process_time : process_time ;
+    always @(posedge clk_reset) load_process_time = pause_state ? next_process_time : process_time ;
     assign finished = !total_remain;
     assign clk_second = power_state ? (pause_state ? clk_clock : (running_state ? 0 : clk_reset )) : 0;
     assign clk_minite = power_state ? (pause_state ? clk_min : ( running_state ? 0 : clk_reset )) : 0;
     assign reset_second = power_state ? (pause_state ? !clk_min : (running_state ? 1 : 0)) : 0;
     assign reset_process = power_state ? (pause_state ? !done_process : (running_state ? 1 : 0)) : 0;
     assign reset_total =  power_state ? (pause_state ?  1 : 0) : 0 ;
-    assign leds[5] = finished ? clk_clock : 0;
     assign leds[4] = intake_running ? clk_clock : 0;
     assign leds[3] = outlet_running ? clk_clock : 0;
     assign leds[2] = wash_running ? clk_clock : wash_state;
