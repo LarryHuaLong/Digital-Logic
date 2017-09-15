@@ -4,7 +4,9 @@ module dashboard(
     input clk_reset,
     input power,
     input pause,
+    input [2:0]weight,
     input finished,
+    output reg [2:0]weight_state,
     output reg power_state,
     output reg pause_state,
     output dududu
@@ -20,8 +22,9 @@ module dashboard(
             end
     always @(posedge clk_clock) 
         if(!ending) count = 11;
-        else if(count)count = count - 1;
+        else if(count&&finished)count = count - 1;
         else;
+    always @(posedge clk_reset) if(!power_state) weight_state = (weight > 3)? weight : 3;
     always @(posedge clk_reset) ex_power = #10 power;
     always @(posedge clk_reset) ex_pause = #10 pause;
     always @(posedge clk_reset) ex_finished = #10 finished;
@@ -34,7 +37,7 @@ module dashboard(
             else if(!ending && ex_ending)//响应dududu后自动关闭电源
                 power_state = 0;
             else if(!pause && ex_pause)//如果电源开启响应暂停按钮
-                pause_state = ~pause_state;
+                begin pause_state = ~pause_state;ending = 0;end
             else if(finished && !ex_finished)//响应洗衣模式结束
                 begin pause_state = 0;ending = 1;end
             else if(!count) 
