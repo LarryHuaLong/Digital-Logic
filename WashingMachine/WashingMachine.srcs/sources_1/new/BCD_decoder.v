@@ -5,7 +5,7 @@ module BCD_decoder(
     );
     initial result = 8'b11111111;
     always @(BCD)
-        case (BCD) // ÓÃ case Óï¾ä½øĞĞÒëÂë
+        case (BCD)
          4'd0:result=8'b00000011;
          4'd1:result=8'b10011111;
          4'd2:result=8'b00100101;

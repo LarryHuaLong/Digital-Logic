@@ -8,5 +8,4 @@ module BCD_encoder(
 	assign temp = DEC_2BIT / 10;
 	assign BCD_decade = temp % 10;
 	assign BCD_unit = DEC_2BIT % 10;
-	
 endmodule

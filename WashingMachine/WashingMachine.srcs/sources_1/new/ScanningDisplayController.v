@@ -7,14 +7,12 @@ module sdc(
 	output reg [7:0]CN
 	);
 	reg [2:0]n;
-	initial 
-	   begin
-	       AN <= 8'b11111111;
-	       CN <= 8'b11111111; 
-	       n <= 3'b000;
-	   end
+	initial begin
+	           AN <= 8'b11111111;
+	           CN <= 8'b11111111; 
+	           n <= 3'b000;
+	        end
 	always @(posedge clk)
-	begin
 		case(n)
 			0:begin  AN <= 8'b01111111;  CN <= display2[31:24]; n <= n + 1; end
 			1:begin  AN <= 8'b10111111;  CN <= display2[23:16]; n <= n + 1; end
@@ -25,5 +23,4 @@ module sdc(
 			6:begin  AN <= 8'b11111101;  CN <= display1[15:8]; n <= n + 1; end
 			7:begin  AN <= 8'b11111110;  CN <= display1[7:0]; n <= n + 1; end
 		endcase
-	end
 endmodule

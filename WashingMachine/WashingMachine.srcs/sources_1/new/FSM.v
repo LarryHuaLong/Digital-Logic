@@ -8,11 +8,10 @@ module fsm(
 	input done_process,
 	output [2:0]wrd_state,
 	output reg [7:0] total_time,
-	output reg [7:0] mode_time,
     output reg [7:0] process_time,
     output reg [7:0] next_process_time,
     output reg running_state,
-    output [4:0] process_running,
+    output [4:0] process_running,//五个进程的运行状态
     output reg finished
 	);
 	localparam mode1 = 3'b111,mode2 = 3'b100,mode3 = 3'b110,
@@ -21,22 +20,20 @@ module fsm(
 			   process4 = 3'b111,process5 = 3'b110,process6 = 3'b100,process7 = 3'b101;
 	reg [2:0]mode_state,process_state;//模式和进程状态
 	reg wash_state,rinse_state,dewatering_state;//洗衣程序状态
-	reg intake_running,wash_running,//进程状态
-	   rinse_running,outlet_running,dewatering_running;
-	reg ex_mode,ex_pause_state,ex_done_process;
+	reg intake_running,wash_running,rinse_running,outlet_running,dewatering_running;//进程状态
+	reg ex_mode,ex_pause_state,ex_done_process;//为识别边沿事件设置的中间变量
 	assign wrd_state = {wash_state,rinse_state,dewatering_state};
     assign process_running = {intake_running,outlet_running,wash_running,rinse_running,dewatering_running};
 	initial begin //初始状态
-	       running_state <= 0;
-	       finished <= 0;
-		   mode_state <= mode1;//默认洗漂脱模式
-		   {wash_state,rinse_state,dewatering_state} <= 3'b0;
-		   total_time <= 33;
-		   mode_time <= 12;
-		   process_state <= process0;
-		   process_time <= 3;//进水时间
-		   next_process_time <= 9;//下个进程是洗衣
-		   {intake_running,wash_running,rinse_running,outlet_running,dewatering_running} <= 5'b00000;
+               running_state <= 0;
+               finished <= 0;
+               mode_state <= mode1;//默认洗漂脱模式
+               {wash_state,rinse_state,dewatering_state} <= 3'b0;
+               total_time <= 33;
+               process_state <= process0;
+               process_time <= 3;//进水时间
+               next_process_time <= 9;//下个进程是洗衣
+               {intake_running,wash_running,rinse_running,outlet_running,dewatering_running} <= 5'b00000;
            end
 	always @(posedge clk_reset) ex_mode = #10 mode ;
 	always @(posedge clk_reset) ex_pause_state = #10 pause_state;
@@ -48,7 +45,6 @@ module fsm(
 			   running_state = 0;
 			   mode_state = mode1;//切换到洗漂脱模式
 			   total_time = weight_state + weight_state + 27;
-			   mode_time = weight_state + 9;
 			   process_state = process0;
 			   process_time = weight_state;//进水时间
 			   next_process_time = 9;//下个进程是洗衣
@@ -60,7 +56,6 @@ module fsm(
 			mode1:begin running_state = 0;finished = 0;
 			           mode_state = mode2;//切换到单洗模式
 					   total_time = weight_state + 9;//单洗模式总时间
-					   mode_time = weight_state + 9;
 					   process_state = process0;
 					   process_time = weight_state;//进水时间
 					   next_process_time = 9;//下个进程是洗衣
@@ -69,7 +64,6 @@ module fsm(
 			mode2:begin running_state = 0;finished = 0;
 			           mode_state = mode3;//切换到洗漂模式
 					   total_time = weight_state + weight_state + 21;
-					   mode_time = weight_state + 9;
 					   process_state = process0;
 					   process_time = weight_state;//进水时间
 					   next_process_time = 9;//下个进程是洗衣
@@ -78,7 +72,6 @@ module fsm(
 			mode3:begin running_state = 0;finished = 0;
 			           mode_state = mode4;//切换到单漂模式
 					   total_time = weight_state + 12;//单漂模式总时间
-					   mode_time = weight_state + 12;
 					   process_state = process2;
 					   process_time = 3;//排水时间
 					   next_process_time = 3;//下个进程是甩干
@@ -87,7 +80,6 @@ module fsm(
 			mode4:begin running_state = 0;finished = 0;
 			           mode_state = mode5;//切换到漂脱模式
 					   total_time = weight_state + 18;//漂脱模式总时间
-                       mode_time = weight_state + 12;
 					   process_state = process2;
 					   process_time = 3;//排水时间
 					   next_process_time = 3;//下个进程是甩干
@@ -96,7 +88,6 @@ module fsm(
 			mode5:begin running_state = 0;finished = 0;
 			           mode_state = mode6;//切换到单脱模式
 					   total_time = 6;//单脱模式总时间
-				       mode_time = 6;
 					   process_state = process6;
 					   process_time = 3;//排水过程时间
 					   next_process_time = 3;//下个进程是甩干
@@ -105,7 +96,6 @@ module fsm(
 			mode6:begin running_state = 0;finished = 0;
 			           mode_state = mode1;//切换到洗漂脱模式
 					   total_time = weight_state + weight_state + 27;
-					   mode_time = weight_state + 9;
 					   process_state = process0;
 					   process_time = weight_state;//进水时间
 					   next_process_time = 9;//下个进程是洗衣
@@ -160,14 +150,12 @@ module fsm(
 							begin running_state = 0;finished = 1;
 							   mode_state = mode1;//切换到洗漂脱模式
                                total_time = weight_state + weight_state + 27;
-                               mode_time = weight_state + 9;
                                process_state = process0;
                                process_time = weight_state;//进水时间
                                next_process_time = 9;//下个进程是洗衣
                                {wash_state,rinse_state,dewatering_state} = #10 mode_state;
 							end
 						else begin  //否则开始排水
-						        mode_time = weight_state + 9;
 								process_state = process2;
 								process_time = 3;
 								outlet_running = 1;//开始排水
@@ -209,7 +197,6 @@ module fsm(
                                {wash_state,rinse_state,dewatering_state} = #10 mode_state;                            
                             end
                         else begin //否则开始排水
-                                mode_time = 6;
                                 process_state = process6;
                                 process_time = 3;
                                 outlet_running = 1;//开始排水
@@ -236,8 +223,6 @@ module fsm(
                        {wash_state,rinse_state,dewatering_state} = #10 mode_state;
                     end
            endcase
-
-	
 endmodule
 
 
