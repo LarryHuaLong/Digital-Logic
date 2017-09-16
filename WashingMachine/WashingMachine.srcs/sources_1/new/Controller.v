@@ -10,9 +10,9 @@ module controller(
 	output  LED_POWER,	//电源指示灯
 	output  LED_PAUSE,	//暂停指示灯
 	output  LED_INTAKE,	//进水指示灯
+	output  LED_OUTLET,	//排水指示灯
 	output  LED_WASH,	//洗涤指示灯
 	output  LED_RINSE,	//漂洗指示灯
-	output  LED_OUTLET,	//排水指示灯
 	output  LED_DEWATERING,//脱水指示灯
 	output  BEEPER		//蜂鸣器（用LED灯代替）
 	);
@@ -26,8 +26,8 @@ module controller(
     wire [7:0]total_time,process_time,next_process_time;  
     wire [7:0]stage_state,AN_DATA;
    	wire [31:0]display2,display1;
-    devider#(5) f_10000Hz(CLK100MHZ,clk_reset);
-    devider#(500) f_1Hz(CLK100MHZ,clk_clock);
+    devider#(5000) f_10000Hz(CLK100MHZ,clk_reset);//仿真时改为5
+    devider#(50000000) f_1Hz(CLK100MHZ,clk_clock);//仿真时改为500
     dashboard Dashboard(clk_clock,clk_reset,power,pause,weight,finished,weight_state,power_state, pause_state,dududu);
     fsm FSM(clk_reset,mode,power_state,pause_state,weight_state,done_process,
             wrd_state,total_time,process_time,next_process_time,running_state,process_running,finished );

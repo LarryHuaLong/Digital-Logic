@@ -10,13 +10,13 @@ module Controller_tb;
 	wire  LED_POWER,//电源指示灯
       LED_PAUSE,    //暂停指示灯
       LED_INTAKE,   //进水指示灯
+      LED_OUTLET,    //排水指示灯
       LED_WASH,     //洗涤指示灯
       LED_RINSE,    //漂洗指示灯
-      LED_OUTLET,    //排水指示灯
       LED_DEWATERING,//脱水指示灯
       BEEPER ;       //蜂鸣器（用LED灯代替）
     controller Controller(CLK100MHZ,power,pause,mode,weight,AN,CN,LED_POWER,LED_PAUSE,
-                        LED_INTAKE,LED_WASH,LED_RINSE,LED_OUTLET,LED_DEWATERING,BEEPER);
+                        LED_INTAKE,LED_OUTLET,LED_WASH,LED_RINSE,LED_DEWATERING,BEEPER);
     initial CLK100MHZ = 0;
     always #5 CLK100MHZ = ~CLK100MHZ;
     initial begin
@@ -27,11 +27,12 @@ module Controller_tb;
             #120500 mode = 1;#10000 mode = 0;
             #125000 mode = 1;#10000 mode = 0;
             #120500 mode = 1;#10000 mode = 0;
-            #120050 mode = 1;#10000 mode = 0;//切换到洗漂脱模式
+            #120050 mode = 1;#10000 mode = 0;//切换回洗漂脱模式
             #130005 pause = 1;#10000 pause = 0;//按下启动按钮
-            #6000000 pause = 1;#10000 pause = 0;//运行10分钟后暂停运行
-            #300000 pause = 1;#10000 pause = 0;//30秒后继续运行
-            #21000000 $finish;//35分钟后仿真结束
-            #10000 $finish;
+            #5000000 mode = 1;#10000 mode = 0;
+            #1000000 pause = 1;#10000 pause = 0;//大概运行10分钟后暂停运行
+            #600000 mode = 1;#10000 mode = 0;//暂停1分钟后从新选择模式到单洗模式
+            #600000 pause = 1;#10000 pause = 0;//1分钟后开始运行
+            #10000000 $finish;//20分钟后仿真结束
         end
 endmodule
